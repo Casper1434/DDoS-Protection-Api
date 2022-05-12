@@ -9,8 +9,36 @@ function run(actionstr) {
 /// (req.params.website, req.params.listen, req.params.backend, req.params.cache, req.params.security, req.params.ssl-prikey, req.params.ssl-crtkey)
 // add a domain to the proxy
 function adddomain() {
-    return run(`echo ${website}/${listen}/${backend}/${cache}/${security}/${ssl-prikey}/${ssl-crtkey} >>/vddos/conf.d/website.conf`)
+    return run(`echo ${website}/http:\/\/${listen}/http:\/\/${backend}/${cache}/${security}/${ssl-prikey}/${ssl-crtkey} >>/vddos/conf.d/website.conf`)
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // enable firewall
 function enable() {
