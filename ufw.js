@@ -12,34 +12,6 @@ function adddomain() {
     return run(`echo ${website}/http:\/\/${listen}/http:\/\/${backend}/${cache}/${security}/${ssl-prikey}/${ssl-crtkey} >>/vddos/conf.d/website.conf`)
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // enable firewall
 function enable() {
     return run('--force enable')
