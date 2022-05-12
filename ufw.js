@@ -8,7 +8,7 @@ function run(actionstr) {
 }
 /// (req.params.website, req.params.listen, req.params.backend, req.params.cache, req.params.security, req.params.ssl-prikey, req.params.ssl-crtkey)
 // add a domain to the proxy
-function domain() {
+function adddomain() {
     return run(`echo ${website}/${listen}/${backend}/${cache}/${security}/${ssl-prikey}/${ssl-crtkey} >>/vddos/conf.d/website.conf`)
 }
 
@@ -83,4 +83,4 @@ function deny_ip(ip, port, protocol) {
 }
 
 
-module.exports = { run, disable, enable, allow, deny, remove, reset, status, deny_ip, show_rules };
+module.exports = { run, adddomain, enable, allow, deny, remove, reset, status, deny_ip, show_rules };
