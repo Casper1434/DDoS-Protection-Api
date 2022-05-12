@@ -6,10 +6,10 @@ function run(actionstr) {
     const output = execSync(`sudo ufw ${actionstr}`, { encoding: 'utf-8' });  // the default is 'buffer'
     return output
 }
-
-// disable firewall
-function disable() {
-    return run('--force disable')
+/// (req.params.website, req.params.listen, req.params.backend, req.params.cache, req.params.security, req.params.ssl-prikey, req.params.ssl-crtkey)
+// add a domain to the proxy
+function domain() {
+    return run(`echo ${website}/${listen}/${backend}/${cache}/${security}/${ssl-prikey}/${ssl-crtkey} >>/vddos/conf.d/website.conf`)
 }
 
 // enable firewall

@@ -25,8 +25,8 @@ const ufw = require("./ufw");
 const bodyparser = require('body-parser')
 app.use(bodyparser.text())
 
-app.get('/api/run/:command',(req,res)=>{ 
-   var out = ufw.run(req.params.command)
+app.get('/api/add-domain/:website/:listen/:backend/:cache/:security/:ssl-prikey/:ssl-crtkey',(req,res)=>{ 
+   var out = ufw.run(req.params.website, req.params.listen, req.params.backend, req.params.cache, req.params.security, req.params.ssl-prikey, req.params.ssl-crtkey)
    res.json({ output: `${out}` })
 })
 
