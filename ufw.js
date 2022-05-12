@@ -3,13 +3,13 @@ function run(actionstr) {
     const execSync = require('child_process').execSync;
     // import { execSync } from 'child_process';  // replace ^ if using ES modules
 
-    const output = execSync(`sudo ufw ${actionstr}`, { encoding: 'utf-8' });  // the default is 'buffer'
+    const output = execSync(`sudo echo ${actionstr}`, { encoding: 'utf-8' });  // the default is 'buffer'
     return output
 }
 /// (req.params.website, req.params.listen, req.params.backend, req.params.cache, req.params.security, req.params.ssl-prikey, req.params.ssl-crtkey)
 // add a domain to the proxy
 function adddomain() {
-    return run(`echo ${website}/http:\/\/${listen}/http:\/\/${backend}/${cache}/${security}/${ssl-prikey}/${ssl-crtkey} >>/vddos/conf.d/website.conf`)
+    return run(`${website}/http:\/\/${listen}/http:\/\/${backend}/${cache}/${security}/${ssl-prikey}/${ssl-crtkey} >>/vddos/conf.d/website.conf`)
 }
 
 // enable firewall
